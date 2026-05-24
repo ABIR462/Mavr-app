@@ -317,9 +317,16 @@ export function ShareRow() {
 }
 
 /* ---------------- Analytics shim ---------------- */
+declare global {
+  interface Window {
+    gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void;
+  }
+}
+
 export function track(name: string, params?: Record<string, unknown>) {
-  if (typeof window !== "undefined" && typeof (window as any).gtag === "function")
-    (window as any).gtag("event", name, params || {});
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", name, params ?? {});
+  }
 }
 
 /* ---------------- Investor modal ---------------- */

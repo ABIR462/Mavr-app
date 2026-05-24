@@ -1,9 +1,12 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "functions": {
     "api/index.ts": {
-      "runtime": "edge"
+      "includeFiles": "dist/server/**",
+      "memory": 1024,
+      "maxDuration": 60
     }
   },
   "rewrites": [

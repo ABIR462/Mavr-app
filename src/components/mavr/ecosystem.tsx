@@ -170,7 +170,6 @@ export function EcosystemSection() {
               >
                 <path d="M4 2L20 11L11 13L9 22L4 2Z" />
               </svg>
-              
             </div>
           </Reveal>
 
@@ -224,22 +223,7 @@ export function EcosystemSection() {
                   Pro.
                 </div>
               </div>
-              <h3
-                style={{
-                  position: "absolute",
-                  bottom: "40px",
-                  left: 0,
-                  right: 0,
-                  padding: "0 24px",
-                  fontSize: "0.65rem",
-                  color: "#a1a1aa",
-                  fontWeight: 600,
-                  letterSpacing: "0.5px",
-                }}
-              >
-                
-              </h3>
-             
+              <h3>MAVR COMPRESSION</h3>
             </div>
           </Reveal>
 
@@ -319,7 +303,6 @@ export function EcosystemSection() {
                 </svg>
                 FOR CERTIFIED TRAINERS
               </div>
-              
             </div>
           </Reveal>
         </div>
