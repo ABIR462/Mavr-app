@@ -223,7 +223,7 @@ export function EcosystemSection() {
                   Pro.
                 </div>
               </div>
-              <h3>MAVR COMPRESSION</h3>
+     
             </div>
           </Reveal>
 
