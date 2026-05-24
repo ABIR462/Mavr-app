@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import logo from "@/assets/mavr-logo.png";
 import connectMock from "@/assets/Connect.png";
 import {
@@ -784,30 +784,27 @@ function Index() {
 }
 
 function ScrollDepth() {
-  // fire scroll depth events
-  if (typeof window !== "undefined") {
-    // attach once
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const w = window as any;
-    if (!w.__mavrScroll) {
-      w.__mavrScroll = { 50: false, 100: false };
-      window.addEventListener(
-        "scroll",
-        () => {
-          const h = document.documentElement;
-          const pct = (h.scrollTop + window.innerHeight) / h.scrollHeight;
-          if (pct >= 0.5 && !w.__mavrScroll[50]) {
-            w.__mavrScroll[50] = true;
-            track("scroll_50");
-          }
-          if (pct >= 0.99 && !w.__mavrScroll[100]) {
-            w.__mavrScroll[100] = true;
-            track("scroll_100");
-          }
-        },
-        { passive: true },
-      );
-    }
-  }
+  useEffect(() => {
+    const w = window as Window & { __mavrScroll?: { 50: boolean; 100: boolean } };
+    if (w.__mavrScroll) return;
+    w.__mavrScroll = { 50: false, 100: false };
+
+    const onScroll = () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop + window.innerHeight) / h.scrollHeight;
+      if (pct >= 0.5 && !w.__mavrScroll![50]) {
+        w.__mavrScroll![50] = true;
+        track("scroll_50");
+      }
+      if (pct >= 0.99 && !w.__mavrScroll![100]) {
+        w.__mavrScroll![100] = true;
+        track("scroll_100");
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return null;
 }

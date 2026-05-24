@@ -2,9 +2,8 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "api/**/*.ts",
-    "api/**/*.d.ts",
     "vite.config.ts",
+    "nitro.config.ts",
     "eslint.config.js"
   ],
   "compilerOptions": {
