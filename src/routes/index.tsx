@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
         content: "India's first athlete operating system is loading. Join 1,000 founding athletes.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://mavr.in" },
+      { property: "og:url", content: "https://www.mavr.in" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "MAVR — Train. Track. Dominate." },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
       },
     ],
     links: [
-      { rel: "canonical", href: "https://mavr.in" },
+      { rel: "canonical", href: "https://www.mavr.in/" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),

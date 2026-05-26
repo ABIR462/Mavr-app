@@ -1,4 +1,4 @@
-import { S as reactExports, K as jsxRuntimeExports, r as f$1, x as getDefaultExportFromCjs } from "./server-DVLlGy5h.mjs";
+import { S as reactExports, K as jsxRuntimeExports, r as f$1, x as getDefaultExportFromCjs } from "./server-DEsmM26z.mjs";
 import "node:async_hooks";
 import "node:stream";
 import "node:stream/web";
@@ -8479,63 +8479,60 @@ function EcosystemSection() {
             }
           )
         ] }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Reveal, { delay: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "c1-card c1-card-2 hover:border-[#E5A1F5]/30 transition-colors", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
-            {
-              style: {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: "70px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "0 24px"
-              },
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: "https://pub-f170a2592d2c4a1485466404c36807be.r2.dev/viktor/network.svg",
-                    alt: "Network",
-                    style: {
-                      width: "100%",
-                      height: "120px",
-                      objectFit: "contain",
-                      marginTop: "10px",
-                      opacity: 0.8,
-                      mixBlendMode: "screen"
-                    }
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Reveal, { delay: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "c1-card c1-card-2 hover:border-[#E5A1F5]/30 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: "70px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "0 24px"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src: "https://pub-f170a2592d2c4a1485466404c36807be.r2.dev/viktor/network.svg",
+                  alt: "Network",
+                  style: {
+                    width: "100%",
+                    height: "120px",
+                    objectFit: "contain",
+                    marginTop: "10px",
+                    opacity: 0.8,
+                    mixBlendMode: "screen"
                   }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "div",
-                  {
-                    style: {
-                      background: "rgba(0, 0, 0, 0.4)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                      padding: "12px",
-                      borderRadius: "12px",
-                      fontSize: "0.75rem",
-                      color: "#cbd5e1",
-                      lineHeight: "1.5",
-                      marginTop: "10px",
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-                      textAlign: "center",
-                      fontWeight: 500
-                    },
-                    children: "Premium performance compression engineered for Indian body proportions and climate. Every garment ships with a product code that unlocks 6 months of MAVR Pro."
-                  }
-                )
-              ]
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "MAVR COMPRESSION" })
-        ] }) }),
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  style: {
+                    background: "rgba(0, 0, 0, 0.4)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    padding: "12px",
+                    borderRadius: "12px",
+                    fontSize: "0.75rem",
+                    color: "#cbd5e1",
+                    lineHeight: "1.5",
+                    marginTop: "10px",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                    textAlign: "center",
+                    fontWeight: 500
+                  },
+                  children: "Premium performance compression engineered for Indian body proportions and climate. Every garment ships with a product code that unlocks 6 months of MAVR Pro."
+                }
+              )
+            ]
+          }
+        ) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(Reveal, { delay: 300, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "c1-card c1-card-3 hover:border-[#F9ED96]/30 transition-colors", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "c1-mesh" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(

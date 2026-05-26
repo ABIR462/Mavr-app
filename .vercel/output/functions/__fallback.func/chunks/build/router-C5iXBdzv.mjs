@@ -1,4 +1,4 @@
-import { e as compileDecodeCharMap, h as createLRUCache, a0 as trimPath, Z as rewriteBasepath, f as composeRewrites, R as processRouteTree, Q as processRouteMasks, Y as resolvePath, d as cleanPath, a2 as trimPathRight, g as createControlledPromise, P as parseHref, p as executeRewriteInput, C as isDangerousProtocol, T as redirect, H as isRedirect, F as isNotFound, u as findSingleMatch, k as deepEqual, D as DEFAULT_PROTOCOL_ALLOWLIST, c as buildRouteBranch, A as interpolatePath, N as nullReplaceEqualDeep, V as replaceEqualDeep$1, L as last, j as decodePath, s as findFlatMatch, v as functionalUpdate$1, t as findRouteMatch, G as isPromise, B as invariant, _ as rootRouteId, a4 as useRouter, K as jsxRuntimeExports, O as Outlet, z as hasKeys, q as executeRewriteOutput, b as arraysEqual, S as reactExports, r as f$1, o as exactPathTest, U as removeTrailingSlash, E as isModuleNotFoundError, I as isServer, l as dummyMatchContext, M as matchContext, n as escapeHtml, w as getAssetCrossOrigin, y as getScriptPreloadAttrs, a as appendUniqueUserTags, a3 as useHydrated, a1 as trimPathLeft, J as joinPaths, X as resolveManifestCssLink, m as encodePathLikeUrl, W as requireReactDom } from "./server-DVLlGy5h.mjs";
+import { e as compileDecodeCharMap, h as createLRUCache, a0 as trimPath, Z as rewriteBasepath, f as composeRewrites, R as processRouteTree, Q as processRouteMasks, Y as resolvePath, d as cleanPath, a2 as trimPathRight, g as createControlledPromise, P as parseHref, p as executeRewriteInput, C as isDangerousProtocol, T as redirect, H as isRedirect, F as isNotFound, u as findSingleMatch, k as deepEqual, D as DEFAULT_PROTOCOL_ALLOWLIST, c as buildRouteBranch, A as interpolatePath, N as nullReplaceEqualDeep, V as replaceEqualDeep$1, L as last, j as decodePath, s as findFlatMatch, v as functionalUpdate$1, t as findRouteMatch, G as isPromise, B as invariant, _ as rootRouteId, a4 as useRouter, K as jsxRuntimeExports, O as Outlet, z as hasKeys, q as executeRewriteOutput, b as arraysEqual, S as reactExports, r as f$1, o as exactPathTest, U as removeTrailingSlash, E as isModuleNotFoundError, I as isServer, l as dummyMatchContext, M as matchContext, n as escapeHtml, w as getAssetCrossOrigin, y as getScriptPreloadAttrs, a as appendUniqueUserTags, a3 as useHydrated, a1 as trimPathLeft, J as joinPaths, X as resolveManifestCssLink, m as encodePathLikeUrl, W as requireReactDom } from "./server-DEsmM26z.mjs";
 import "node:async_hooks";
 import "node:stream";
 import "node:stream/web";
@@ -4743,7 +4743,7 @@ function RootComponent() {
   const { queryClient } = Route$1.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter = () => import("./index-C7eB17ze.mjs");
+const $$splitComponentImporter = () => import("./index-DCnMTK1j.mjs");
 const Route2 = createFileRoute("/")({
   head: () => ({
     meta: [{

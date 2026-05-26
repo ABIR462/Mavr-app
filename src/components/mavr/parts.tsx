@@ -283,7 +283,7 @@ export function Ticker({ slow = false }: { slow?: boolean }) {
 /* ---------------- Share row ---------------- */
 export function ShareRow() {
   const msg =
-    "I just joined the MAVR waitlist — India's first athlete operating system. Join here: https://mavr.in";
+    "I just joined the MAVR waitlist — India's first athlete operating system. Join here: https://www.mavr.in";
   return (
     <div className="flex items-center gap-3 text-xs text-[#888]">
       <span>Share your spot. Move up the waitlist.</span>
@@ -301,7 +301,7 @@ export function ShareRow() {
       </a>
       <button
         onClick={() => {
-          navigator.clipboard?.writeText("https://mavr.in");
+          navigator.clipboard?.writeText("https://www.mavr.in");
           track("share_copy_link");
         }}
         className="w-8 h-8 grid place-items-center border border-[#1A1A1A] hover:border-[#CC0000] rounded transition"
