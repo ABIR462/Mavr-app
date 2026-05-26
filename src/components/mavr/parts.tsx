@@ -122,11 +122,15 @@ export function Navbar({ onJoin }: { onJoin: () => void }) {
 
 /* ---------------- Countdown ---------------- */
 function useCountdown(target: number) {
+  // Initialize with Date.now() but sync immediately on mount to prevent hydration mismatch issues
   const [now, setNow] = useState(() => Date.now());
+  
   useEffect(() => {
+    setNow(Date.now()); // Sync client time
     const i = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(i);
   }, []);
+  
   const d = Math.max(0, target - now);
   return {
     days: Math.floor(d / 86400000),
@@ -148,9 +152,10 @@ function FlipNum({ value }: { value: number }) {
 }
 
 export function Countdown() {
-  // Target date: August 10, 2026 (August 2nd week 2026)
-  const target = useRef(new Date("2026-08-10T00:00:00").getTime()).current;
+  // Target date: August 10, 2026 (August 2nd week 2026), using UTC to avoid timezone shifts
+  const target = useRef(new Date("2026-08-10T00:00:00Z").getTime()).current;
   const { days, hours, minutes, seconds } = useCountdown(target);
+  
   const Block = ({ n, label }: { n: number; label: string }) => (
     <div className="mavr-card px-4 py-3 md:px-6 md:py-4 min-w-[80px] md:min-w-[110px] text-center flip">
       <FlipNum value={n} />
@@ -159,9 +164,11 @@ export function Countdown() {
       </div>
     </div>
   );
+  
   const Colon = () => (
     <div className="hidden md:flex text-[#CC0000] text-4xl font-display self-center px-1">:</div>
   );
+  
   return (
     <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-3 md:gap-2">
       <Block n={days} label="DAYS" />
