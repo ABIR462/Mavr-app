@@ -116,10 +116,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       // Replace G-XXXXXXXX with your GA4 Measurement ID
-      { src: "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX", async: true },
+      { src: "https://www.googletagmanager.com/gtag/js?id=G-YZF3XBM2B7", async: true },
       {
         children:
-          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXX');",
+          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YZF3XBM2B7');",
       },
     ],
   }),
