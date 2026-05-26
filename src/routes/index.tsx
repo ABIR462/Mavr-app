@@ -24,38 +24,6 @@ import {
 } from "@/components/mavr/sections";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "MAVR — India's First Athlete Operating System" },
-      {
-        name: "description",
-        content:
-          "MAVR is India's first complete athlete operating system. Track workouts, nutrition, connect with coaches, and earn achievements. Join the waitlist now.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Indian fitness app, athlete tracking app India, gym tracking app, trainer student app India, fitness app India",
-      },
-      { property: "og:title", content: "MAVR — Train. Track. Dominate." },
-      {
-        property: "og:description",
-        content: "India's first athlete operating system is loading. Join 1,000 founding athletes.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://www.mavr.in" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "MAVR — Train. Track. Dominate." },
-      {
-        name: "twitter:description",
-        content: "India's first athlete operating system is loading.",
-      },
-    ],
-    links: [
-      { rel: "canonical", href: "https://www.mavr.in/" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-    ],
-  }),
   component: Index,
 });
 

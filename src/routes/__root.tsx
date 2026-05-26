@@ -74,31 +74,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0A0A0A" },
       { property: "og:site_name", content: "MAVR" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@mavr" },
       { title: "MAVR — India's First Athlete Operating System" },
-      { property: "og:title", content: "MAVR — India's First Athlete Operating System" },
-      { name: "twitter:title", content: "MAVR — India's First Athlete Operating System" },
       {
         name: "description",
         content:
-          "MAVR is India's first athlete operating system, offering a unified platform for training, nutrition, and community.",
+          "MAVR is India's first complete athlete operating system. Track workouts, nutrition, connect with coaches, and earn achievements. Join the waitlist now.",
       },
+      {
+        name: "keywords",
+        content:
+          "Indian fitness app, athlete tracking app India, gym tracking app, trainer student app India, fitness app India",
+      },
+      { property: "og:title", content: "MAVR — Train. Track. Dominate." },
       {
         property: "og:description",
-        content:
-          "MAVR is India's first athlete operating system, offering a unified platform for training, nutrition, and community.",
+        content: "India's first athlete operating system is loading. Join 1,000 founding athletes.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.mavr.in" },
+      { property: "og:image", content: "/favicon.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@mavr" },
+      { name: "twitter:title", content: "MAVR — Train. Track. Dominate." },
       {
         name: "twitter:description",
-        content:
-          "MAVR is India's first athlete operating system, offering a unified platform for training, nutrition, and community.",
+        content: "India's first athlete operating system is loading.",
       },
-      { property: "og:image", content: "/favicon.png" },
       { name: "twitter:image", content: "/favicon.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://www.mavr.in/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
