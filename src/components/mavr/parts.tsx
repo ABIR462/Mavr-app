@@ -122,10 +122,11 @@ export function Navbar({ onJoin }: { onJoin: () => void }) {
 
 /* ---------------- Countdown ---------------- */
 function useCountdown(target: number) {
-  // Initialize with Date.now() but sync immediately on mount to prevent hydration mismatch issues
+  const [mounted, setMounted] = useState(false);
   const [now, setNow] = useState(() => Date.now());
   
   useEffect(() => {
+    setMounted(true);
     setNow(Date.now()); // Sync client time
     const i = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(i);
@@ -133,6 +134,7 @@ function useCountdown(target: number) {
   
   const d = Math.max(0, target - now);
   return {
+    mounted,
     days: Math.floor(d / 86400000),
     hours: Math.floor((d / 3600000) % 24),
     minutes: Math.floor((d / 60000) % 60),
@@ -140,10 +142,11 @@ function useCountdown(target: number) {
   };
 }
 
-function FlipNum({ value }: { value: number }) {
+function FlipNum({ value, mounted }: { value: number; mounted: boolean }) {
   return (
     <span
-      key={value}
+      key={mounted ? value : 'static'}
+      suppressHydrationWarning
       className="flip-num font-display text-5xl md:text-7xl text-white tabular-nums"
     >
       {String(value).padStart(2, "0")}
@@ -151,14 +154,14 @@ function FlipNum({ value }: { value: number }) {
   );
 }
 
+const TARGET_DATE = new Date("2026-08-10T00:00:00Z").getTime();
+
 export function Countdown() {
-  // Target date: August 10, 2026 (August 2nd week 2026), using UTC to avoid timezone shifts
-  const target = useRef(new Date("2026-08-10T00:00:00Z").getTime()).current;
-  const { days, hours, minutes, seconds } = useCountdown(target);
+  const { mounted, days, hours, minutes, seconds } = useCountdown(TARGET_DATE);
   
   const Block = ({ n, label }: { n: number; label: string }) => (
     <div className="mavr-card px-4 py-3 md:px-6 md:py-4 min-w-[80px] md:min-w-[110px] text-center flip">
-      <FlipNum value={n} />
+      <FlipNum value={n} mounted={mounted} />
       <div className="text-[10px] md:text-[11px] text-[#CC0000] tracking-[0.25em] mt-1 font-medium">
         {label}
       </div>
