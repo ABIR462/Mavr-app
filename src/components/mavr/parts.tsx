@@ -148,7 +148,8 @@ function FlipNum({ value }: { value: number }) {
 }
 
 export function Countdown() {
-  const target = useRef(Date.now() + 90 * 86400000).current;
+  // Target date: August 10, 2026 (August 2nd week 2026)
+  const target = useRef(new Date("2026-08-10T00:00:00").getTime()).current;
   const { days, hours, minutes, seconds } = useCountdown(target);
   const Block = ({ n, label }: { n: number; label: string }) => (
     <div className="mavr-card px-4 py-3 md:px-6 md:py-4 min-w-[80px] md:min-w-[110px] text-center flip">
