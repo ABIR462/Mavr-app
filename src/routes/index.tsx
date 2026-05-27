@@ -736,7 +736,7 @@ function Index() {
             {/* Bottom row */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="font-mono text-[11px] text-[#555] tracking-widest">
-                © {new Date().getFullYear()} MAVR TECHNOLOGIES PVT. LTD. — ALL RIGHTS RESERVED
+                © {new Date().getFullYear()} MAVR — ALL RIGHTS RESERVED
               </div>
               <div className="font-mono text-[11px] text-[#555]">
                 BUILT IN INDIA &nbsp;·&nbsp; mavr.in

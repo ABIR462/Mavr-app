@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { motion, useInView } from "framer-motion";
 import logo from "@/assets/mavr-logo.png";
-import { Countdown, WaitlistForm, Counter, ShareRow } from "@/components/mavr/parts";
+import { WaitlistForm, Counter, ShareRow } from "@/components/mavr/parts";
 
 /* ---------------- FadingVideo (rAF crossfade) ---------------- */
 const FADE_MS = 500;
@@ -313,18 +313,6 @@ export function CinematicHero() {
             >
               Explore Ecosystem <Play className="h-4 w-4" />
             </a>
-          </motion.div>
-
-          {/* Countdown */}
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 1.2 }}
-            className="mt-10 w-full"
-          >
-            <div className="text-[11px] tracking-[0.3em] text-white/70 mb-3 font-body-barlow">
-              PUBLIC LAUNCH IN
-            </div>
-            <Countdown />
           </motion.div>
 
           {/* Stats row */}
