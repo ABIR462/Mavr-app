@@ -215,24 +215,6 @@
   animation: tierPulse 2.2s ease-in-out infinite;
 }
 
-/* ─── Flip card countdown ────────────────────────────────────── */
-.flip {
-  perspective: 400px;
-}
-@keyframes flipIn {
-  from {
-    transform: rotateX(-90deg);
-    opacity: 0;
-  }
-  to {
-    transform: rotateX(0);
-    opacity: 1;
-  }
-}
-.flip-num {
-  display: inline-block;
-  animation: flipIn 0.4s ease-out;
-}
 
 /* ─── Buttons ────────────────────────────────────────────────── */
 .btn-red {
