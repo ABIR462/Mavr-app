@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RegistrationRouteImport } from './routes/registration'
+import { Route as InvestorsRouteImport } from './routes/investors'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as BuildLogRouteImport } from './routes/build-log'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RegistrationRoute = RegistrationRouteImport.update({
+  id: '/registration',
+  path: '/registration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestorsRoute = InvestorsRouteImport.update({
+  id: '/investors',
+  path: '/investors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildLogRoute = BuildLogRouteImport.update({
+  id: '/build-log',
+  path: '/build-log',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/build-log': typeof BuildLogRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/faq': typeof FaqRoute
+  '/investors': typeof InvestorsRoute
+  '/registration': typeof RegistrationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/build-log': typeof BuildLogRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/faq': typeof FaqRoute
+  '/investors': typeof InvestorsRoute
+  '/registration': typeof RegistrationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/build-log': typeof BuildLogRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/faq': typeof FaqRoute
+  '/investors': typeof InvestorsRoute
+  '/registration': typeof RegistrationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/build-log'
+    | '/ecosystem'
+    | '/faq'
+    | '/investors'
+    | '/registration'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/build-log'
+    | '/ecosystem'
+    | '/faq'
+    | '/investors'
+    | '/registration'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/build-log'
+    | '/ecosystem'
+    | '/faq'
+    | '/investors'
+    | '/registration'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BuildLogRoute: typeof BuildLogRoute
+  EcosystemRoute: typeof EcosystemRoute
+  FaqRoute: typeof FaqRoute
+  InvestorsRoute: typeof InvestorsRoute
+  RegistrationRoute: typeof RegistrationRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/registration': {
+      id: '/registration'
+      path: '/registration'
+      fullPath: '/registration'
+      preLoaderRoute: typeof RegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investors': {
+      id: '/investors'
+      path: '/investors'
+      fullPath: '/investors'
+      preLoaderRoute: typeof InvestorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-log': {
+      id: '/build-log'
+      path: '/build-log'
+      fullPath: '/build-log'
+      preLoaderRoute: typeof BuildLogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BuildLogRoute: BuildLogRoute,
+  EcosystemRoute: EcosystemRoute,
+  FaqRoute: FaqRoute,
+  InvestorsRoute: InvestorsRoute,
+  RegistrationRoute: RegistrationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

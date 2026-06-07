@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { Ticker, track } from "@/components/mavr/parts";
-import { CinematicNavbar, CinematicHero } from "@/components/mavr/hero-cinematic";
+import { CinematicNavbar } from "@/components/mavr/hero-cinematic";
 import { WaitlistFooter } from "@/components/mavr/shared-layout";
+import { FAQSection } from "@/components/mavr/sections";
+import { useEffect } from "react";
+import { track } from "@/components/mavr/parts";
 
-export const Route = createFileRoute("/")({
-  component: Index,
+export const Route = createFileRoute("/faq")({
+  component: FAQ,
 });
 
 function ScrollDepth() {
@@ -19,11 +20,11 @@ function ScrollDepth() {
       const pct = (h.scrollTop + window.innerHeight) / h.scrollHeight;
       if (pct >= 0.5 && !w.__mavrScroll![50]) {
         w.__mavrScroll![50] = true;
-        track("scroll_50_home");
+        track("scroll_50_faq");
       }
       if (pct >= 0.99 && !w.__mavrScroll![100]) {
         w.__mavrScroll![100] = true;
-        track("scroll_100_home");
+        track("scroll_100_faq");
       }
     };
 
@@ -34,19 +35,14 @@ function ScrollDepth() {
   return null;
 }
 
-function Index() {
+function FAQ() {
   const scrollToWaitlist = () =>
     document.getElementById("waitlist-final")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden">
+    <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden pt-20">
       <CinematicNavbar onJoin={scrollToWaitlist} />
-
-      {/* HERO — Cinematic */}
-      <CinematicHero />
-
-      <Ticker />
-
+      <FAQSection />
       <WaitlistFooter />
       <ScrollDepth />
     </main>

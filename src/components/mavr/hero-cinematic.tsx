@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { motion, useInView } from "framer-motion";
 import logo from "@/assets/mavr-logo.png";
 import { WaitlistForm, Counter, ShareRow } from "@/components/mavr/parts";
+import { Link } from "@tanstack/react-router";
 
 /* ---------------- FadingVideo (rAF crossfade) ---------------- */
 const FADE_MS = 500;
@@ -148,30 +149,33 @@ const Play = ({ className = "h-4 w-4" }: { className?: string }) => (
 export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
   const [open, setOpen] = useState(false);
   const links = [
-    { l: "About", h: "#about" },
-    { l: "Ecosystem", h: "#ecosystem" },
-    { l: "Build Log", h: "#buildlog" },
-    { l: "Investors", h: "#investors" },
+    { l: "Home", to: "/" },
+    { l: "About", to: "/about" },
+    { l: "Build Log", to: "/build-log" },
+    { l: "Investors", to: "/investors" },
+    { l: "Ecosystem", to: "/ecosystem" },
+    { l: "FAQ", to: "/faq" },
+    { l: "Registration", to: "/registration" },
   ];
   return (
     <>
       <nav className="fixed top-4 inset-x-0 z-50 px-4 md:px-8 lg:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#top" className="liquid-glass rounded-full h-12 w-12 grid place-items-center">
+          <Link to="/" className="liquid-glass rounded-full h-12 w-12 grid place-items-center">
             <img src={logo} alt="MAVR" className="h-7 w-7 object-contain" />
-          </a>
+          </Link>
 
           {/* Desktop nav pill */}
           <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1.5 items-center gap-1">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.l}
-                href={l.h}
+                to={l.to}
                 className="px-3 py-2 text-sm font-medium text-white/90 font-body-barlow hover:text-white transition-colors"
               >
                 {l.l}
-              </a>
+              </Link>
             ))}
             <button
               onClick={onJoin}
@@ -208,14 +212,14 @@ export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
             ×
           </button>
           {links.map((l) => (
-            <a
+            <Link
               key={l.l}
-              href={l.h}
+              to={l.to}
               onClick={() => setOpen(false)}
               className="text-2xl font-display tracking-wider"
             >
               {l.l}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => {
