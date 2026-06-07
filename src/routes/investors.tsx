@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CinematicNavbar } from "@/components/mavr/hero-cinematic";
-import { WaitlistFooter, Section, Overline, H2 } from "@/components/mavr/shared-layout";
+import { WaitlistFooter, Section, Overline, H2, PageHeader } from "@/components/mavr/shared-layout";
 import { Reveal, InvestorModal } from "@/components/mavr/parts";
 import { useState, useEffect } from "react";
 import logo from "@/assets/mavr-logo.png";
@@ -44,6 +44,7 @@ function Investors() {
   return (
     <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden pt-20">
       <CinematicNavbar onJoin={scrollToWaitlist} />
+      <PageHeader title="Investors" subtitle="India's fitness market is massively underbuilt. See the opportunity." />
 
       {/* SECTION 8 — MARKET */}
       <Section id="investors" className="overflow-hidden">
@@ -131,56 +132,7 @@ function Investors() {
         </div>
       </Section>
 
-      {/* SECTION 9 — FOUNDER */}
-      <Section alt>
-        <Reveal>
-          <Overline>WHO IS MAVR</Overline>
-        </Reveal>
-        <Reveal delay={100}>
-          <H2>Built by Athletes. For Athletes.</H2>
-        </Reveal>
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-10">
-          <Reveal>
-            <div className="relative w-full max-w-sm aspect-[3/4] mx-auto">
-              {[
-                "top-0 left-0 border-l-4 border-t-4",
-                "top-0 right-0 border-r-4 border-t-4",
-                "bottom-0 left-0 border-l-4 border-b-4",
-                "bottom-0 right-0 border-r-4 border-b-4",
-              ].map((p) => (
-                <div key={p} className={`absolute ${p} w-8 h-8 border-[#CC0000]`} />
-              ))}
-              <div className="absolute inset-3 bg-[#111] grid place-items-center">
-                <img src={logo} alt="MAVR" className="h-20 w-auto opacity-60" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <blockquote className="italic text-lg md:text-xl text-white leading-relaxed">
-              "India has 1.4 billion people. A generation of athletes training in gyms, on fields,
-              in academies — all underserved by technology built for someone else. Not our food. Not
-              our sports. Not our trainers. Not our gyms.
-              <br />
-              <br />
-              MAVR is being built to fix that. One system. Every athlete. Built in India."
-            </blockquote>
-          </Reveal>
-        </div>
-        <div className="grid sm:grid-cols-3 gap-4 mt-12">
-          {[
-            ["24 Sections", "Complete developer build guide"],
-            ["30+ Tables", "Full database schema documented"],
-            ["₹2,394", "Pro value included with every apparel purchase"],
-          ].map(([n, d], i) => (
-            <Reveal key={n} delay={i * 100}>
-              <div className="mavr-card mavr-card-top px-4 py-4 flex items-center justify-between min-h-[80px]">
-                <div className="font-display text-2xl">{n}</div>
-                <div className="text-[#888] text-xs text-right max-w-[60%]">{d}</div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+
 
       <InvestorModal open={investorOpen} onClose={() => setInvestorOpen(false)} />
       <WaitlistFooter />

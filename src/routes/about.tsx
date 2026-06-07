@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CinematicNavbar } from "@/components/mavr/hero-cinematic";
-import { WaitlistFooter, Section, Overline, H2 } from "@/components/mavr/shared-layout";
+import { WaitlistFooter, Section, Overline, H2, PageHeader } from "@/components/mavr/shared-layout";
 import { ProblemSection } from "@/components/mavr/sections";
 import { Reveal } from "@/components/mavr/parts";
 import { useEffect } from "react";
@@ -44,6 +44,7 @@ function About() {
   return (
     <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden pt-20">
       <CinematicNavbar onJoin={scrollToWaitlist} />
+      <PageHeader title="About" subtitle="The origin, the platform, and the vision of India's first athlete operating system." />
 
       {/* THE PROBLEM */}
       <ProblemSection />

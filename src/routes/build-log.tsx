@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CinematicNavbar } from "@/components/mavr/hero-cinematic";
-import { WaitlistFooter, Section, Overline, H2 } from "@/components/mavr/shared-layout";
+import { WaitlistFooter, Section, Overline, H2, PageHeader } from "@/components/mavr/shared-layout";
 import { Reveal } from "@/components/mavr/parts";
 import connectMock from "@/assets/Connect.png";
 import { IdentitySection } from "@/components/mavr/identity";
@@ -50,6 +50,7 @@ function BuildLog() {
   return (
     <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden pt-20">
       <CinematicNavbar onJoin={scrollToWaitlist} />
+      <PageHeader title="Build Log" subtitle="We build in the open. You watch it happen. The raw changelog of MAVR." />
 
       {/* SECTION 4 — YOUR IDENTITY */}
       <IdentitySection />

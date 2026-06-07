@@ -156,6 +156,7 @@ export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
     { l: "Ecosystem", to: "/ecosystem" },
     { l: "FAQ", to: "/faq" },
     { l: "Registration", to: "/registration" },
+    { l: "Blog", to: "#" },
   ];
   return (
     <>

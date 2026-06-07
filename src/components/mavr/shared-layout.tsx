@@ -33,6 +33,28 @@ export function H2({ children }: { children: React.ReactNode }) {
   );
 }
 
+export function PageHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+  return (
+    <div className="pt-32 pb-16 md:pb-24 px-6 relative overflow-hidden bg-[#0A0A0A] text-center border-b border-white/5">
+      <div className="absolute inset-0 z-[0] bg-[radial-gradient(ellipse_at_top,rgba(204,0,0,0.15),transparent_50%)] pointer-events-none" />
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <Reveal>
+          <h1 className="font-serif-i text-5xl md:text-7xl lg:text-[80px] leading-[0.9] text-white tracking-tight uppercase">
+            {title}
+          </h1>
+        </Reveal>
+        {subtitle && (
+          <Reveal delay={100}>
+            <p className="mt-6 text-[#888] font-body-barlow text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+              {subtitle}
+            </p>
+          </Reveal>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function WaitlistFooter() {
   return (
     <>

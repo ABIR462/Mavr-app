@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CinematicNavbar } from "@/components/mavr/hero-cinematic";
-import { WaitlistFooter } from "@/components/mavr/shared-layout";
+import { WaitlistFooter, PageHeader } from "@/components/mavr/shared-layout";
 import { EcosystemSection } from "@/components/mavr/ecosystem";
 import { useEffect } from "react";
 import { track } from "@/components/mavr/parts";
@@ -42,6 +42,7 @@ function Ecosystem() {
   return (
     <main id="top" className="bg-[#0A0A0A] text-white overflow-x-hidden pt-20">
       <CinematicNavbar onJoin={scrollToWaitlist} />
+      <PageHeader title="Ecosystem" subtitle="One System. Three Pillars. Training, Nutrition, Coaching." />
       <EcosystemSection />
       <WaitlistFooter />
       <ScrollDepth />
