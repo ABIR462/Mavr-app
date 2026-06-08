@@ -1,6 +1,8 @@
 import { getPosts } from "@/actions/blog";
 import BlogClientUI from "@/components/blog-client-ui";
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogIndexPage() {
   const posts = await getPosts();
   const publishedPosts = posts.filter(p => p.published);

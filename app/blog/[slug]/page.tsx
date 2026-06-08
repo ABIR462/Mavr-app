@@ -2,6 +2,8 @@ import { getPostBySlug } from "@/actions/blog";
 import { notFound } from "next/navigation";
 import BlogSlugClientUI from "@/components/blog-slug-client-ui";
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
 
