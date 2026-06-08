@@ -49,7 +49,7 @@ export default async function AdminBlogsPage() {
                     {new Date(post.createdAt).toLocaleDateString()}
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <Link href={\`/admin/blogs/\${post.id}\`} className="text-[#cc0000] hover:text-[#ff4444] text-sm">
+                    <Link href={`/admin/blogs/${post.id}`} className="text-[#cc0000] hover:text-[#ff4444] text-sm">
                       Edit
                     </Link>
                   </td>

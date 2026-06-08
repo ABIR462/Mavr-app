@@ -88,7 +88,7 @@ export default function Editor({
               }
             }}
             onUploadError={(error: Error) => {
-              alert(\`ERROR! \${error.message}\`);
+              alert(`ERROR! ${error.message}`);
             }}
           />
         </div>

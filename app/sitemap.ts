@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const publishedPosts = posts.filter(p => p.published);
 
   const blogUrls = publishedPosts.map((post) => ({
-    url: \`https://www.mavr.in/blog/\${post.slug}\`,
+    url: `https://www.mavr.in/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt),
     changeFrequency: 'weekly' as const,
     priority: 0.8,

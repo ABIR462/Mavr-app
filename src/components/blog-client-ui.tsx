@@ -29,7 +29,7 @@ export default function BlogClientUI({ posts }: { posts: Post[] }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           {posts.map((post, i) => (
             <Reveal key={post.id} delay={i * 100}>
-              <Link href={\`/blog/\${post.slug}\`} className="group block h-full">
+              <Link href={`/blog/${post.slug}`} className="group block h-full">
                 <div className="mavr-card p-8 h-full flex flex-col hover:border-[#cc0000]/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden bg-[#0A0A0A]/70 backdrop-blur-md">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#cc0000] opacity-0 group-hover:opacity-10 blur-3xl transition-opacity"></div>
                   <div className="text-sm text-[#cc0000] font-mono mb-4 tracking-widest">
