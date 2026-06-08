@@ -58,7 +58,7 @@ export function Navbar({ onJoin }: { onJoin: () => void }) {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
-            <img src={logo} alt="MAVR" className="h-8 w-auto" />
+            <img src={typeof logo === 'string' ? logo : (logo as any).src} alt="MAVR" className="h-8 w-auto" />
             <span className="font-display text-2xl tracking-wider">MAVR</span>
           </a>
           <div className="hidden md:flex items-center gap-8">

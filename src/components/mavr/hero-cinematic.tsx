@@ -1,9 +1,9 @@
+"use client";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { motion, useInView } from "framer-motion";
 import logo from "@/assets/mavr-logo.png";
 import { WaitlistForm, Counter, ShareRow } from "@/components/mavr/parts";
-import { Link } from "@tanstack/react-router";
-
+import Link from "next/link";
 /* ---------------- FadingVideo (rAF crossfade) ---------------- */
 const FADE_MS = 500;
 const FADE_OUT_LEAD = 0.55;
@@ -163,8 +163,8 @@ export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
       <nav className="fixed top-4 inset-x-0 z-50 px-4 md:px-8 lg:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="liquid-glass rounded-full h-12 w-12 grid place-items-center">
-            <img src={logo} alt="MAVR" className="h-7 w-7 object-contain" />
+          <Link href="/" className="liquid-glass rounded-full h-12 w-12 grid place-items-center relative z-10 hover:scale-105 transition-transform group">
+            <img src={(logo as any).src || logo} alt="MAVR" className="h-7 w-7 object-contain" />
           </Link>
 
           {/* Desktop nav pill */}
@@ -172,7 +172,7 @@ export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
             {links.map((l) => (
               <Link
                 key={l.l}
-                to={l.to}
+                href={l.to}
                 className="px-3 py-2 text-sm font-medium text-white/90 font-body-barlow hover:text-white transition-colors"
               >
                 {l.l}
@@ -215,7 +215,7 @@ export function CinematicNavbar({ onJoin }: { onJoin: () => void }) {
           {links.map((l) => (
             <Link
               key={l.l}
-              to={l.to}
+              href={l.to}
               onClick={() => setOpen(false)}
               className="text-2xl font-display tracking-wider"
             >
@@ -405,3 +405,5 @@ export function CinematicHero() {
     </section>
   );
 }
+
+

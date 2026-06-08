@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+import Link from "next/link";
 import { WaitlistForm, ShareRow, Reveal } from "@/components/mavr/parts";
 import logo from "@/assets/mavr-logo.png";
 
@@ -130,7 +131,7 @@ export function WaitlistFooter() {
             {/* Top row */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/10 pb-12 mb-12">
               <div>
-                <img src={logo} alt="MAVR" className="h-10 w-auto mb-4" />
+                <img src={typeof logo === 'string' ? logo : (logo as any).src} alt="MAVR" className="h-10 w-auto mb-4" />
                 <p className="text-[#888] text-sm max-w-sm leading-relaxed">
                   India's first athlete operating system. Built for Indian athletes, Indian food,
                   Indian trainers, and Indian gyms.
@@ -145,22 +146,22 @@ export function WaitlistFooter() {
                   </div>
                   <ul className="space-y-2 text-[#888]">
                     <li>
-                      <Link to="/" className="hover:text-white transition-colors">
+                      <Link href="/" className="hover:text-white transition-colors">
                         MAVR App
                       </Link>
                     </li>
                     <li>
-                      <Link to="/ecosystem" className="hover:text-white transition-colors">
+                      <Link href="/ecosystem" className="hover:text-white transition-colors">
                         Ecosystem
                       </Link>
                     </li>
                     <li>
-                      <Link to="/about" className="hover:text-white transition-colors">
+                      <Link href="/about" className="hover:text-white transition-colors">
                         Compression Gear
                       </Link>
                     </li>
                     <li>
-                      <Link to="/registration" className="hover:text-white transition-colors">
+                      <Link href="/registration" className="hover:text-white transition-colors">
                         Coach Connect
                       </Link>
                     </li>
@@ -172,12 +173,12 @@ export function WaitlistFooter() {
                   </div>
                   <ul className="space-y-2 text-[#888]">
                     <li>
-                      <Link to="/build-log" className="hover:text-white transition-colors">
+                      <Link href="/build-log" className="hover:text-white transition-colors">
                         Build Log
                       </Link>
                     </li>
                     <li>
-                      <Link to="/investors" className="hover:text-white transition-colors">
+                      <Link href="/investors" className="hover:text-white transition-colors">
                         Investors
                       </Link>
                     </li>
@@ -233,3 +234,5 @@ export function WaitlistFooter() {
     </>
   );
 }
+
+
