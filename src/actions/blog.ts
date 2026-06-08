@@ -43,6 +43,8 @@ export async function createPost(data: { title: string; content: string; excerpt
 
   revalidatePath("/admin/blogs");
   revalidatePath("/blog");
+  revalidatePath(`/blog/${post.slug}`);
+  revalidatePath("/sitemap.xml");
   return post;
 }
 
