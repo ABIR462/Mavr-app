@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cc0000: #cc0000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-text-tertiary: #888888;
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #050505;
+  --radius-default: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  html {
+    @apply bg-black scroll-smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+    color-scheme: dark;
+  }
+
+  h1 {
+    @apply font-serif-i text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply font-serif-i text-3xl font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply font-serif-i text-2xl font-bold;
+  }
+
+  p {
+    @apply font-body-barlow text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-white hover:opacity-80 transition-opacity;
+  }
+}
+
+@layer components {
+  .liquid-glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  .liquid-glass-strong {
+    @apply backdrop-blur-lg bg-white/20 border border-white/30;
+  }
+
+  .btn-red {
+    @apply bg-cc0000 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold font-body-barlow transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-white/20 hover:bg-white/5 text-white px-6 py-3 rounded-full font-semibold font-body-barlow transition-colors;
+  }
+
+  .overline {
+    @apply font-mono text-xs tracking-widest text-cc0000 uppercase;
+  }
+
+  .font-serif-i {
+    @apply font-serif;
+  }
+
+  .font-body-barlow {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

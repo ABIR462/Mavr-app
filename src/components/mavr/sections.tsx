@@ -924,3 +924,17 @@ export function FAQSection() {
 }
 
 // Press & Media section removed per project requirements.
+
+export function Sections() {
+  return (
+    <>
+      <ProblemSection />
+      <FoodSearchSection />
+      <CalculatorSection />
+      <LeaderboardSection />
+      <TrainerSection />
+      <BetaSection />
+      <FAQSection />
+    </>
+  );
+}
