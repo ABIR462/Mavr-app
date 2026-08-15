@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Inter", sans-serif;
+  --font-serif-i: "Playfair Display", serif;
+  --font-body-barlow: "Barlow", sans-serif;
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #030303;
+}
+
+body {
+  background-color: #030303;
+  color: #ffffff;
+  font-family: var(--font-display), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Overrides */
+.font-display {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.font-serif-i {
+  font-family: var(--font-serif-i), serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-body-barlow {
+  font-family: var(--font-body-barlow), sans-serif;
+}
+
+/* Custom UI Components */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-glass:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.liquid-glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-glass-strong:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-red {
+  background: #CC0000;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(204, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-family: var(--font-body-barlow), sans-serif;
+  border: 1px solid rgba(255, 0, 0, 0.15);
+  cursor: pointer;
+}
+.btn-red:hover {
+  background: #e60000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(204, 0, 0, 0.5), 0 0 0 2px rgba(204, 0, 0, 0.1);
+}
+.btn-red:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px 0 rgba(204, 0, 0, 0.3);
+}
+.btn-red:disabled {
+  background: #222222;
+  border-color: #333333;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #666666;
+}
+
+.overline {
+  font-family: monospace;
+  font-size: 11px;
+  color: #CC0000;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mavr-card {
+  background: #080808;
+  border: 1px solid #141414;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mavr-card:hover {
+  border-color: rgba(204, 0, 0, 0.25);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), 0 0 25px rgba(204, 0, 0, 0.03);
+}
+
+.mavr-input {
+  width: 100%;
+  background: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: var(--font-body-barlow), sans-serif;
+  font-size: 14px;
+}
+.mavr-input:focus {
+  border-color: #CC0000;
+  background: #111111;
+  box-shadow: 0 0 0 1px rgba(204, 0, 0, 0.5);
+}
+.mavr-input::placeholder {
+  color: #444444;
+}
+
+.mavr-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 3px;
+  outline: none;
+}
+.mavr-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #CC0000;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(204, 0, 0, 0.6);
+  transition: transform 0.1s ease, background-color 0.1s ease;
+  border: none;
+}
+.mavr-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #ff3333;
+}
+.mavr-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #CC0000;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(204, 0, 0, 0.6);
+  border: none;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+.mavr-range::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #ff3333;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.marquee-slow {
+  animation-duration: 55s;
+}
+
+/* iOS and Safari Specific Adjustments */
+@supports (-webkit-touch-callout: none) {
+  .liquid-glass, .liquid-glass-strong {
+    /* Use solid background with opacity if backdrop-filter causes rendering lag in older iOS WebKit */
+    background: rgba(10, 10, 10, 0.85);
+  }
+}
